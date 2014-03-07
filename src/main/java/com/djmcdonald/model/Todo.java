@@ -1,23 +1,23 @@
 package com.djmcdonald.model;
 
 public class Todo {
-    private String id;
+    private String thing;
 
     public Todo() {
     }
 
-    public Todo(String id) {
-        this.id = id;
+    public Todo(String thing) {
+        this.thing = thing;
     }
 
-    public String getId() {
-        return id;
+    public String getThing() {
+        return thing;
     }
 
     @Override
     public String toString() {
         return "Todo{" +
-                "id='" + id + '\'' +
+                "thing='" + thing + '\'' +
                 '}';
     }
 
@@ -28,13 +28,13 @@ public class Todo {
 
         Todo todo = (Todo) o;
 
-        if (!id.equals(todo.id)) return false;
+        if (!thing.equals(todo.thing)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return id.hashCode();
+        return thing.hashCode();
     }
 }

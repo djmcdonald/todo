@@ -1,6 +1,7 @@
 package com.djmcdonald.resources;
 
 import com.djmcdonald.model.Todo;
+import com.djmcdonald.repositories.TodosRepository;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -8,11 +9,15 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import java.util.List;
 
-import static com.google.common.collect.Lists.newArrayList;
-
-@Path("/service/todos")
+@Path("/todos")
 @Produces("application/json")
 public class TodoResource {
+
+    private final TodosRepository todosRepository;
+
+    public TodoResource(TodosRepository todosRepository) {
+        this.todosRepository = todosRepository;
+    }
 
     @GET
     @Path("{id}")
@@ -22,6 +27,6 @@ public class TodoResource {
 
     @GET
     public List<Todo> todos() {
-        return newArrayList(new Todo("1"), new Todo("2"));
+        return todosRepository.todos();
     }
 }
