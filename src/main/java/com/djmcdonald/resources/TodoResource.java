@@ -4,6 +4,7 @@ import com.djmcdonald.model.Todo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 @Path("/service/todos")
@@ -11,7 +12,8 @@ import javax.ws.rs.Produces;
 public class TodoResource {
 
     @GET
-    public Todo getTodo() {
-        return new Todo("id");
+    @Path("{id}")
+    public Todo getTodo(@PathParam("id") String id) {
+        return new Todo(id);
     }
 }

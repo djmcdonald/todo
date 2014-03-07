@@ -9,7 +9,11 @@ repositories {
 
 dependencies {
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-core', version: '0.6.2'
+    compile 'org.mongodb:mongo-java-driver:2.11.4'
 
-    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testCompile 'com.yammer.dropwizard:dropwizard-testing:0.6.2'
+    testCompile 'org.easytesting:fest-assert:1.4'
+    testCompile 'com.yammer.dropwizard:dropwizard-client:0.6.2'
 }
 

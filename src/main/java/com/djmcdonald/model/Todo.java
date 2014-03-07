@@ -1,7 +1,10 @@
 package com.djmcdonald.model;
 
 public class Todo {
-    private final String id;
+    private String id;
+
+    public Todo() {
+    }
 
     public Todo(String id) {
         this.id = id;
