@@ -34,4 +34,8 @@ class TodoResourceSpec extends Specification {
         then:
         expectedTodos == actualTodos
     }
+
+    def 'it can create a todo'() {
+
+    }
 }

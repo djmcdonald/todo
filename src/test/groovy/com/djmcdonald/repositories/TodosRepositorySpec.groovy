@@ -15,7 +15,7 @@ class TodosRepositorySpec extends Specification {
         def expectedTodos = newArrayList(new Todo("1"))
         def mockDbCollection = Mock(DBCollection.class)
         mockDbCollection.find() >> mockDbCursor
-        mockDbCursor.hasNext() >> [ true, false ]
+        mockDbCursor.hasNext() >>> [ true, false ]
         def mockDbObject = Mock(DBObject.class)
         mockDbCursor.next() >> mockDbObject
         mockDbObject.get('thing') >> '1'
@@ -26,5 +26,6 @@ class TodosRepositorySpec extends Specification {
 
         then:
         actualTodos == expectedTodos
+        1 * mockDbCursor.close()
     }
 }

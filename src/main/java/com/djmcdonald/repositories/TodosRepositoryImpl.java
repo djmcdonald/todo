@@ -28,6 +28,13 @@ public class TodosRepositoryImpl implements TodosRepository {
             todos.add(todo);
         }
 
+        dbCursor.close();
+
         return todos;
+    }
+
+    @Override
+    public Todo todo(String id) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
